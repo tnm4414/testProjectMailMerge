@@ -46,7 +46,7 @@ def create_letter(doc, customer):
         f"{first_name} {last_name},\n"  # First Name Last Name
         f"{primary_mailing_address}\n"  # Primary Mailing Address
         f"{city} {state} {zipcode}\n\n"  # City, State, ZIP
-        f"Dear {first_name},\n\n"
+        f"Dear {first_name},\n"
 
     )
 
@@ -129,7 +129,7 @@ def remove_blank_cells(data_list):
 
 docx_file_path = 'Output.docx'
 csv_file_path = 'MiniTest.csv'
-new_csv_file_path = 'Durham8_5.csv'
+new_csv_file_path = 'CleanedMiniTest.csv'
 
 
 def process_csv_and_generate_doc(template_path, output_doc_path):
@@ -161,12 +161,12 @@ def process_csv_and_generate_doc(template_path, output_doc_path):
             print(f"Document updated and saved to {output_doc_path}")
 
     # Export the cleaned data to a new CSV file
-    export_to_csv(data, 'CleanedDurham8_5.csv')
-    print("Exported cleaned data to CleanedDurham8_5.csv")
+    export_to_csv(data, 'CleanedMiniTest.csv')
+    print("Exported cleaned data to CleanedMiniTest.csv")
 
 
 if __name__ == "__main__":
-    template_path = 'Durham8_5.csv'  # input CSV file
+    template_path = 'MiniTest.csv'  # input CSV file
     output_doc_path = 'Output.docx'  # output Word document
     process_csv_and_generate_doc(template_path, output_doc_path)
 
